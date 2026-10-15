@@ -1,26 +1,27 @@
-@import "tailwindcss";
-
-:root {
-  color-scheme: dark;
-  --background: #090d14;
-  --foreground: #e5e7eb;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  min-height: 100vh;
-  margin: 0;
-  background:
-    radial-gradient(ellipse at top, rgb(27 44 67 / 35%), transparent 48rem),
-    var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-button,
-input {
-  font: inherit;
-}
+/* Theme matched to the openAlpha screenshot: white page, ink-navy text/buttons, Space Grotesk headings, Inter body, mono data labels. */
+:root{--bg:#fff;--ink:#0f1524;--muted:#5d6675;--faint:#8b93a1;--line:#e6e8ec;--soft:#f6f7f9;--up:#0f9d6e;--up-bg:#e5f6ef;--down:#e5533d;--down-bg:#fdebe8;
+--head:"Space Grotesk",system-ui,sans-serif;--sans:Inter,system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(900px 500px at 85% 10%,#f3f5fb,transparent 70%),var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px 56px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;height:68px;border-bottom:1px solid var(--line);margin:0 -20px 56px;padding:0 20px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--head);font-weight:600;font-size:19px}
+.logo i{display:grid;place-items:center;width:34px;height:34px;border-radius:9px;background:var(--ink);color:#fff;font-style:normal;font-size:16px}
+h1{font-family:var(--head);font-weight:600;font-size:clamp(34px,5.4vw,58px);line-height:1.08;letter-spacing:-.02em;margin:0 0 18px;max-width:16ch}
+.sub{color:var(--muted);font-size:17px;line-height:1.65;margin:0 0 28px;max-width:56ch}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:16px}
+input,button{font:inherit;font-size:14px;border-radius:10px;padding:10px 14px;border:1px solid var(--line);background:#fff;color:var(--ink)}
+button{cursor:pointer;font-weight:500}button:hover{border-color:var(--ink)}
+button.dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+button:focus-visible,input:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.chip{font-family:var(--mono);font-size:12px;padding:5px 11px;border-radius:99px;background:var(--soft);color:var(--muted)}
+.chip.ok{background:var(--up-bg);color:var(--up)}.chip.bad{background:var(--down-bg);color:var(--down)}
+.card{border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:0 12px 36px rgba(15,21,36,.07);margin-top:18px}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:780px}th,td{padding:14px 18px;text-align:right;white-space:nowrap}
+th:first-child,td:first-child,th:nth-child(6),td:nth-child(6){text-align:left}
+th{font-family:var(--mono);font-weight:400;font-size:12px;color:var(--faint);cursor:pointer;border-bottom:1px solid var(--line)}
+tr+tr td{border-top:1px solid var(--line)}tbody tr:hover{background:var(--soft)}
+td{font-family:var(--mono);font-size:14px}td:first-child{font-family:var(--head);font-weight:600;font-size:16px}td small{color:var(--faint)}
+.up{color:var(--up)}.down{color:var(--down)}tr.sel td{background:var(--soft)}
+.pad{padding:18px 20px}.pad h2{font-family:var(--head);font-size:18px;margin:0 0 12px;display:flex;align-items:center;gap:10px}
+.pad p{margin:8px 0;font-size:14px;color:var(--muted);line-height:1.5}.pad p.new{color:var(--ink)}
+.note{color:var(--faint);font-size:12px;margin-top:22px;max-width:72ch;line-height:1.6}
